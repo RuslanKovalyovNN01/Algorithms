@@ -37,3 +37,30 @@ void merge_sort(int l, int r, std::vector<T>& nums) {
 	merge_sort(mid + 1, r, nums);
 	merge(l, mid, mid + 1, r, nums);
 }
+
+/*
+* Quick Sort.
+*/
+template<typename T>
+int partition(int l, int r, std::vector<T> &nums) {
+	T pivot = nums[r];
+	int i = l;
+	for (int j = l; j < r; j++) {
+		if (nums[j] <= pivot) {
+			std::swap(nums[j], nums[i]);
+			i++;
+		}
+	}
+	std::swap(nums[i], nums[r]);
+	return i;
+}
+
+template<typename T>
+void quick_sort(int l, int r, std::vector<T>& nums) {
+	if (l >= r) {
+		return;
+	}
+	int p = partition(l, r, nums);
+	quick_sort(l, p - 1, nums);
+	quick_sort(p + 1, r, nums);
+}
