@@ -4,6 +4,7 @@
 #include <cctype>
 
 #include "nlog_sorts.h"
+#include "quadratic_sorts.h"
 
 int main() {
 	std::vector<int> a = { 7,6,5,4,3,4,5,6 };
@@ -16,6 +17,12 @@ int main() {
 	quick_sort(0, b.size() - 1, b);
 	for (int i = 0; i < b.size(); i++) {
 		std::cout << b[i] << " ";
+	}
+	std::cout << std::endl;
+	std::vector<int> c = { 7,6,5,4,3,4,5,6 };
+	bubble_sort(c);
+	for (int i = 0; i < c.size(); i++) {
+		std::cout << c[i] << " ";
 	}
 	std::cout << std::endl;
 	return 0;
