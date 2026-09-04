@@ -1,16 +1,18 @@
-template<typename T>
-struct Node {
-    T value;
-    Node<T> *left;
-    Node<T> *right;
+#pragma once
 
-    Node(int value){
+template<typename T>
+struct node {
+    T value;
+    node<T> *left;
+    node<T> *right;
+
+    node(int value){
         this->value = value;
-        this->left = left;
-        this->right = right;
+        this->left = nullptr;
+        this->right = nullptr;
     }
 
-    Node(int value, Node* left, Node* right){
+    node(T value, node<T>* left, node<T>* right){
         this->value = value;
         this->left = left;
         this->right = right;
