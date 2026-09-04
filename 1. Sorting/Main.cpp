@@ -25,6 +25,6 @@ int main() {
 		std::cout << c[i] << " ";
 	}
 	std::cout << std::endl;
-	std::vector<double> b = { 4.0 , 4.2 , 5.0, 2.1 };
+	// std::vector<double> b = { 4.0 , 4.2 , 5.0, 2.1 };
 	return 0;
 }

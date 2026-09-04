@@ -64,3 +64,4 @@ void quick_sort(int l, int r, std::vector<T>& nums) {
 	quick_sort(l, p - 1, nums);
 	quick_sort(p + 1, r, nums);
 }
+
