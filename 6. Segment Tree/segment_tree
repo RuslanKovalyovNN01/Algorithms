@@ -1,0 +1,24 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+const int INF = 1e9;
+
+class SegmentTree {
+    int tree_size = 1;
+    std::vector<int> tree;
+public:
+    SegmentTree(const std::vector<int> &v) {
+        const int input_vector_size = v.size();
+        while(tree_size < input_vector_size){
+            tree_size *= 2;
+        }
+        tree.resize(2 * tree_size, -INF);
+        for(int i = 0; i < input_vector_size; i++){
+            tree[tree_size + i] = v[i];
+        }
+        for(int i = tree_size - 1; i>0;i--){
+            tree[i] = std::max(tree[2 * i], tree[2 * i + 1]);
+        }   
+    }
+};

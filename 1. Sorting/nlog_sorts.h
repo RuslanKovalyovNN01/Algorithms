@@ -39,7 +39,7 @@ void merge_sort(int l, int r, std::vector<T>& nums) {
 }
 
 /*
-* Quick Sort.
+	* Quick Sort.
 */
 template<typename T>
 int partition(int l, int r, std::vector<T> &nums) {
