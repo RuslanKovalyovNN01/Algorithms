@@ -33,4 +33,16 @@ public:
             node /= 2;
         }
     }
+    int max(int left, int right){
+        return _max(1,0,tree_size,left_bound, right_bound);
+    }
+private:
+    int _max(int node, int start, int segment_size, int left_bound, int right_bound){
+        if(start + segment_size <= left_bound || right_bound <= start){
+            return -INF;
+        }
+        if(left_bound <= start && start+segment_size <= right_bound){
+            return tree[node];
+        }
+    }
 };
