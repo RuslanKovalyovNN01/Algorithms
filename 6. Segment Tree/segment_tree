@@ -21,4 +21,16 @@ public:
             tree[i] = std::max(tree[2 * i], tree[2 * i + 1]);
         }   
     }
+    int get(int index){
+        return tree[tree_size + i];
+    }
+    int set(int index, int value){
+        int node = tree_size + index;
+        tree[node] = value;
+        node /= 2;
+        while(node > 0) {
+            tree[node] = std::max(tree[2 * node], tree[2 * node + 1]);
+            node /= 2;
+        }
+    }
 };
